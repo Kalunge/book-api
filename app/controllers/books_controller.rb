@@ -30,6 +30,6 @@ class BooksController < ApplicationController
       publisher: ' Clean code publishers', title: 'THe clean Coder ', author_first_name: 'Robert', author_last_name: 'Mcchain', price: 62.99
     }]
 
-    @books_to_save.map { |book| Book.create!(book) }
+    Book.import(@books_to_save)
   end
 end
