@@ -356,11 +356,14 @@ Olsen, Russ. 2015 "Eloquent Ruby: Secret behind becoming a Ruby Ninja" On writin
   ```
 </details>
 
+## Testing 
+- run `rspec spec/`
 
 ## Built With
 
 - Ruby On Rails
 - Ruby Gems
+- RSpec
 
 ## Version Control System
 
