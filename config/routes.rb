@@ -7,4 +7,8 @@ Rails.application.routes.draw do
   get "/save", to: "books#save_to_db", as: :save
   get "/procedure", to: "books#sorted_db_procedure", as: :sorted_db_procedure
   get "/procedure/author", to: "books#sorted_by_author_first_db_procedure", as: :sorted_by_author_first_db_procedure
+  get "/mla/:id", to: "books#as_mla", as: :as_mla
+  get "/chicago/:id", to: "books#as_chicago", as: :as_chicago
+
+  
 end
