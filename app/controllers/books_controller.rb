@@ -5,12 +5,12 @@ class BooksController < ApplicationController
   end
 
   def sorted
-    @sorted_books = Book.order('publisher, author_last_name, author_first_name, title')
+    @sorted_books = Book.all.order('publisher, author_last_name, author_first_name, title')
     render json: @sorted_books
   end
 
   def sorted_by_author
-    @sorted_by_author_books = Book.order('author_last_name, author_first_name, title')
+    @sorted_by_author_books = Book.all.order('author_last_name, author_first_name, title')
     render json: @sorted_by_author_books
   end
 
@@ -31,5 +31,15 @@ class BooksController < ApplicationController
     }]
 
     Book.import(@books_to_save)
+  end
+
+  def sorted_db_procedure
+    @sorted_books = DbStoredProcedure.fetch_db_records("SELECT * FROM books ORDER BY publisher, author_last_name, author_first_name, title")
+    render json: @sorted_books
+  end
+
+  def sorted_by_author_first_db_procedure
+    @sorted_by_author_first = DbStoredProcedure.fetch_db_records("SELECT * FROM books ORDER BY author_last_name, author_first_name, title")
+    render json: @sorted_by_author_first
   end
 end
