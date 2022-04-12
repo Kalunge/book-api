@@ -52,10 +52,14 @@ class BooksController < ApplicationController
       publisher: ' Cleanest coder publishers', title: 'THe clean Coder: Make your future self appreciate the code you write Today ', author_first_name: 'Robert', author_last_name: 'Mcchain', price: 62.99, container_title: 'code is not only written but read, make all those that read it happy', publication_year: 2020
     }]
 
-     Book.import(
-  [:publisher, :title, :author_first_name, :author_last_name, :price, :container_title, :publication_year],
-  @books_to_save
-)
+    Book.import(
+      %i[publisher title author_first_name author_last_name price container_title publication_year],
+      @books_to_save
+    )
+
+    @last_books = Book.last(@books_to_save.size)
+
+    render json: BooksRepresenter.new(@last_books).as_json
   end
 
   # /procedure
