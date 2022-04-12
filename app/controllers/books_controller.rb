@@ -23,23 +23,7 @@ class BooksController < ApplicationController
     render json: @total.round(2)
   end
 
-  # # /save
-  # def save_to_db
-  #   @books_to_save = [{
-  #     publisher: 'U Java publishers', title: 'Eloquent Java: Secret behind becoming a Java Ninja', author_first_name: 'Russ', author_last_name: 'Olsen', price: 52.99, container_title: 'On writing the most efficient Ruby code', publication_year: 2013
-  #   }, {
-  #     publisher: 'U React publishers', title: 'Eloquent Rails: Take your Rub on Rails skills to the next level', author_first_name: 'Jane', author_last_name: 'Doe', price: 45.99, container_title: 'On writing applications that Matter using React on Rails', publication_year: 2012
-  #   }, {
-  #     publisher: 'U Js publishers', title: 'Eloquent Python: Make Python your native language in no time', author_first_name: 'JOhn', author_last_name: 'Doe', price: 34.99, container_title: 'On writing Python like the Ninja you should be', publication_year: 2005
-  #   }, {
-  #     publisher: ' Cleanest coder publishers', title: 'THe clean Coder: Make your future self appreciate the code you write Today ', author_first_name: 'Robert', author_last_name: 'Mcchain', price: 62.99, container_title: 'code is not only written but read, make all those that read it happy', publication_year: 2020
-  #   }]
-
-  #   Book.import(@books_to_save)
-  #   @last_books = Book.last(@books_to_save.size)
-
-  #   render json: BooksRepresenter.new(@last_books).as_json
-  # end
+ 
 
   def create
     @books_to_save = [{
