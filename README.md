@@ -19,6 +19,13 @@
   
 - you can run `rails db:reset` to perform the above scripts at once
 
+- run `rails s` to fire up your server
+
+
+
+PostGres database, table design along with fields and their datatypes.
+![drawSQL-export-2022-04-11_12_23](https://user-images.githubusercontent.com/50773868/162736001-e9bd3429-0fc7-4983-a848-6fa75374f050.png)
+
 - Use your favourite API testing tool(Postman, terminal, Thunder client in vscode) to test the endpoints as follows
 
 ### Books
@@ -349,11 +356,14 @@ Olsen, Russ. 2015 "Eloquent Ruby: Secret behind becoming a Ruby Ninja" On writin
   ```
 </details>
 
+## Testing 
+- run `rspec spec/`
 
 ## Built With
 
 - Ruby On Rails
 - Ruby Gems
+- RSpec
 
 ## Version Control System
 
